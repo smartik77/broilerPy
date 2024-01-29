@@ -14,9 +14,9 @@ while (True):
         print("Точка принадлежит области D\n")
     elif (x**2 + y**2 > r1**2 and x**2 + y**2 < r2**2 and x > 0 and y < 0):
         print("Точка принадлежит области C\n")
-    elif (x**2 + y**2 > r1**2 and x < 0 and y > 0 and x < r2 and y < r2):
+    elif (x**2 + y**2 > r1**2 and x < 0 and y > 0 and fabs(x) < r2 and y < r2):
         print("Точка принадлежит области B\n")
-    elif (x**2 + y**2 > r1**2 and x < 0 and y < 0 and x < r2 and y < r2):
+    elif (x**2 + y**2 > r1**2 and x < 0 and y < 0 and fabs(x) < r2 and fabs(y) < r2):
         print("Точка принадлежит области D\n")
     # двойные точки на круге
     elif (x**2 + y**2 == r1**2 and x > 0 and y > 0):
@@ -58,3 +58,18 @@ while (True):
         print("Точка принадлежит областям D, C, E\n")
     elif (y == 0 and fabs(x) == r2 and x < 0):
         print("Точка принадлежит областям B, D, E\n")
+    # двойные с Е
+    elif (x**2 + y**2 == r2**2 and x > 0 and y > 0):
+        print("Точка принадлежит областям D, E\n")
+    elif (x**2 + y**2 == r2**2 and x > 0 and y < 0):
+        print("Точка принадлежит областям C, E\n")
+    elif (fabs(y) == r2 and x < 0 and y > 0 ):
+        print("Точка принадлежит областям B, E\n")
+    elif (fabs(x) == r2 and x < 0 and y > 0 ):
+        print("Точка принадлежит областям B, E\n")
+    elif (fabs(x) == r2 and x < 0 and y < 0 ):
+        print("Точка принадлежит областям D, E\n")
+    elif (fabs(y) == r2 and x < 0 and y < 0 ):
+        print("Точка принадлежит областям D, E\n")
+    else:
+        print("Точка принадлежит области E\n")

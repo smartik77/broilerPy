@@ -17,7 +17,7 @@ def monteCarlo(a, b, n):
         x = uniform(a, b)
         y = uniform(findMinY(dx, a, b), findMaxY(dx, a, b))
         
-        if (x >= a and y >= f1(y) and y <= f2(y) and x <= b):
+        if (x >= a and y >= f1(x) and y <= f2(x) and x <= b):
             pointIsHit += 1
 
     sSquare = width * hight
@@ -45,7 +45,7 @@ def findMaxY(dx, a, b):
     return maxY
 
 while (True):
-    variant = int(input("Для выбора метода интегрирования введите число(1 - метод прямоугольников, 2 - метод трапеций, 0 - выход): "))
+    variant = int(input("\nДля выбора метода интегрирования введите число(1 - метод прямоугольников, 2 - метод трапеций, 0 - выход): "))
     a = float(input("Введите нижний предел интегрирования а: "))
     b = float(input("Введите верхний предел интегрирования b: "))
     dx = float(input("Введите шаг интегрирования dx: "))
@@ -64,7 +64,7 @@ while (True):
             ds = y * dx
             s += ds
             x += dx
-        print(f"Метод прямоугольников: {s}")
+        print(f"\nМетод прямоугольников: {s}")
 
     elif (variant == 2):  #  метод трапеций
 
@@ -79,10 +79,10 @@ while (True):
             ds2 = ((y2 + y2Next) / 2) * dx
             s += fabs(ds1 - ds2)
             x += dx
-        print(f"Метод трапеций: {s}")
+        print(f"\nМетод трапеций: {s}")
 
     elif (variant == 0):
         break
     else:
         continue
-    print(f"Метод монте-карло: {monteCarlo(a, b, n)}")
+    print(f"Метод монте-карло: {monteCarlo(a, b, n)}\n")

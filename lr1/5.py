@@ -45,7 +45,7 @@ def findMaxY(dx, a, b):
     return maxY
 
 while (True):
-    variant = int(input("\nДля выбора метода интегрирования введите число(1 - метод прямоугольников, 2 - метод трапеций, 0 - выход): "))
+    variant = int(input("\nДля выбора метода интегрирования введите число(1 - метод прямоугольников, 2 - метод трапеций): "))
     a = float(input("Введите нижний предел интегрирования а: "))
     b = float(input("Введите верхний предел интегрирования b: "))
     dx = float(input("Введите шаг интегрирования dx: "))
@@ -80,9 +80,6 @@ while (True):
             s += fabs(ds1 - ds2)
             x += dx
         print(f"\nМетод трапеций: {s}")
-
-    elif (variant == 0):
-        break
     else:
         continue
     print(f"Метод монте-карло: {monteCarlo(a, b, n)}\n")

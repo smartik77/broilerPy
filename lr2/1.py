@@ -10,7 +10,7 @@ def f2(x):
 def pointInFigure(x, y, a, b):
     return x >= a and y >= f1(x) and y <= f2(x) and x <= b
 
-def monteCarlo(a, b, n):
+def monteCarlo(a, b, n, dx):
     pointIsHit = 0
 
     width = b - a
@@ -93,4 +93,4 @@ while (True):
     else:
         continue
     
-    print(f"Метод монте-карло: {monteCarlo(a, b, n)}\n")
+    print(f"Метод монте-карло: {monteCarlo(a, b, n, dx)}\n")

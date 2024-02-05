@@ -7,8 +7,8 @@ def f1(x):
 def f2(x):
     return fabs(tan(0.2 * x)) + x
 
-# def pointInFigure(x, y):
-#     return
+def pointInFigure(x, y, a, b):
+    return x >= a and y >= f1(x) and y <= f2(x) and x <= b
 
 def monteCarlo(a, b, n):
     pointIsHit = 0
@@ -20,7 +20,7 @@ def monteCarlo(a, b, n):
         x = uniform(a, b)
         y = uniform(findMinY(dx, a, b), findMaxY(dx, a, b))
         
-        if (x >= a and y >= f1(x) and y <= f2(x) and x <= b):
+        if (pointInFigure(x, y, a, b)):
             pointIsHit += 1
 
     sSquare = width * hight

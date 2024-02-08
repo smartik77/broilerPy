@@ -8,9 +8,10 @@ while (True):
     b = float(input("Введите верхний предел интегрирования b: "))
     dx = float(input("Введите шаг интегрирования dx: "))
 
-    s = float(0)
+    s = 0
     x = a
 
+    # метод прямоугольников
     while x <= b:
         y = f(x)
         ds = y * dx

@@ -7,6 +7,7 @@ def f1(x):
 def f2(x):
     return fabs(tan(0.2 * x)) + x
 
+# метод монте-карло
 def monteCarlo(a, b, n):
     pointIsHit = 0
 
@@ -24,6 +25,7 @@ def monteCarlo(a, b, n):
 
     return (pointIsHit / n) * sSquare
 
+# нахождение минимума функции f1
 def findMinY(dx, a, b):
     minY = f1(a)
     y = a
@@ -34,6 +36,7 @@ def findMinY(dx, a, b):
         y += dx
     return minY
 
+# нахождение максимума функции f2
 def findMaxY(dx, a, b):
     maxY = f2(a)
     y = a
@@ -54,7 +57,8 @@ while (True):
     x = a
     s = 0
 
-    if (variant == 1):  #  метод прямоугольников
+    # метод прямоугольников
+    if (variant == 1):
 
         while (x <= b):
             y1 = f1(x)
@@ -65,8 +69,9 @@ while (True):
             s += ds
             x += dx
         print(f"\nМетод прямоугольников: {s}")
-
-    elif (variant == 2):  #  метод трапеций
+    
+    # метод трапеций
+    elif (variant == 2):
 
         while (x <= b):
             y1 = f1(x)
